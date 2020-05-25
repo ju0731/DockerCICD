@@ -9,7 +9,7 @@
     "provisioners":[
         {
             "type": "ansible",
-            "playbook_file": "./playbook_back/back.yml"
+            "playbook_file": "/var/lib/jenkins/workspace/DockerCICD_master/playbook_back/back.yml"
         }
     ],
     "post-processors": [
