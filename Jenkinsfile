@@ -9,13 +9,15 @@ pipeline {
 
     stage('Make Docker') {
       steps {
-        sh 'echo docker'
+        sh '''cd /var/lib/jenkins/workspace/
+sudo ./packer build ./DockerCICD_master/packer/makeDocker.json
+'''
       }
     }
 
     stage('Create ECS') {
       steps {
-        sh 'echo ecs'
+        sh 'aws ecs create-cluster --cluster-name obd-docker-cluster-hanju'
       }
     }
 
