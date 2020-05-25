@@ -10,7 +10,7 @@ pipeline {
     stage('Make Docker') {
       steps {
         sh '''cd /var/lib/jenkins/workspace/
-./packer build ./DockerCICD_master/packer/makeDocker.json
+sudo ./packer build ./DockerCICD_master/packer/makeDocker.json
 '''
       }
     }
