@@ -30,7 +30,7 @@ docker login
 
     stage('Make Service') {
       steps {
-        sh '''aws ecs create-service --cluster obd-docker-cluster-hanju --service-name fargate-service --task-definition sample-fargate2:1 --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={subnets=[subnet-0358ae653e4b4a215, 	
+        sh '''aws ecs create-service --cluster obd-docker-cluster-hanju --service-name fargate-service --task-definition sample-fargate:3 --desired-count 1 --launch-type "FARGATE" --network-configuration "awsvpcConfiguration={subnets=[subnet-0358ae653e4b4a215, 	
 subnet-0b53fb891cb3041ce],securityGroups=[sg-038311bad06c0abb5],assignPublicIp=ENABLED}"'''
       }
     }
