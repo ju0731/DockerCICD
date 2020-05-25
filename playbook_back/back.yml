@@ -1,5 +1,6 @@
 - name: Build Amazon Linux Base Image
-  hosts: all
+  hosts: anything
+  gather_facts: False
   roles:
     - common
     - jdk8
