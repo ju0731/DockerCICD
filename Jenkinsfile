@@ -9,7 +9,8 @@ pipeline {
 
     stage('Make Docker') {
       steps {
-        sh 'echo docker'
+        sh '''cd /var/lib/jenkins/workspace/
+./packer build -var-file=var.json ./DockerCICD_master/packer/makeDocker.json'''
       }
     }
 
