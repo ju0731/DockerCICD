@@ -10,7 +10,8 @@ pipeline {
     stage('Make Docker') {
       steps {
         sh '''cd /var/lib/jenkins/workspace/
-docker login
+echo dockervar.json
+docker login --username "${username}" --password "${password}"
 ./packer build ./DockerCICD_master/packer/makeDocker.json
 '''
       }
