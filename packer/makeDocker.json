@@ -1,0 +1,25 @@
+{
+    "builders":[
+        {
+            "type": "docker",
+            "image": "ubuntu:16.04",
+            "commit": true
+        }
+    ],
+    "provisioners":[
+        {
+            "type": "ansible",
+            "playbook_file": "./playbook_back/back.yml"
+        }
+    ],
+    "post-processors": [
+        [
+            {
+               "type": "docker-tag",
+               "repository": "wptlzk6404/hanju",
+               "tag": "api_image"
+            },
+            "docker-push"
+        ]
+    ]
+}
