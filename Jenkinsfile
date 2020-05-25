@@ -24,7 +24,7 @@ docker login
 
     stage('Make Task') {
       steps {
-        sh 'aws ecs register-task-definition --cli-input-json file://var/lib/jenkins/workspace/task.json'
+        sh 'aws ecs register-task-definition --cli-input-json file:///var/lib/jenkins/workspace/task.json'
       }
     }
 
